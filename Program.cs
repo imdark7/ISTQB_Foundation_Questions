@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ISTQB_Foundation_Questions
@@ -82,7 +80,7 @@ namespace ISTQB_Foundation_Questions
             }
         }
 
-        private static Dictionary<int, string> CorrectAnswers = new Dictionary<int, string>()
+        private static readonly Dictionary<int, string> CorrectAnswers = new Dictionary<int, string>()
         {
             {1, "D"},
             {2, "C"},

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace ISTQB_Foundation_Questions
@@ -118,9 +119,68 @@ namespace ISTQB_Foundation_Questions
                 if (dialog == DialogResult.Yes)
                 {
                     UpdateTranslate();
+                    if (_question.Answers.Count < 5)
+                    {
+                        SendDataToGoogleSpreadsheets(
+                            _question.Id, QuestionTranslateTextBox.Text,
+                            _question.Answers[0].Id, _answers[0].Value.Text,
+                            _question.Answers[1].Id, _answers[1].Value.Text,
+                            _question.Answers[2].Id, _answers[2].Value.Text,
+                            _question.Answers[3].Id, _answers[3].Value.Text
+                        );
+                    }
+                    else
+                    {
+                        SendDataToGoogleSpreadsheets(
+                            _question.Id, QuestionTranslateTextBox.Text,
+                            _question.Answers[0].Id, _answers[0].Value.Text,
+                            _question.Answers[1].Id, _answers[1].Value.Text,
+                            _question.Answers[2].Id, _answers[2].Value.Text,
+                            _question.Answers[3].Id, _answers[3].Value.Text,
+                            _question.Answers[4].Id, _answers[4].Value.Text
+                        );
+                    }
                 }
             }
+            
             Close();
+        }
+
+        private static void SendDataToGoogleSpreadsheets(
+            long questionNumber,
+            string questionTranslate,
+            long AnswerNumber1,
+            string AnswerTranslate1,
+            long AnswerNumber2,
+            string AnswerTranslate2,
+            long AnswerNumber3,
+            string AnswerTranslate3,
+            long AnswerNumber4,
+            string AnswerTranslate4,
+            long? AnswerNumber5 = null,
+            string AnswerTranslate5 = null
+            )
+        {
+            var client = new HttpClient();
+            var requestString =
+                "https://docs.google.com/forms/d/e/1FAIpQLScFvIQhp6NaWK8kH1f7oQUJFazXlhX60KhYCNUDQZABGEsW1A/formResponse?" +
+                $"entry.180058012={questionNumber}" + "&" +
+                $"entry.445293845={questionTranslate}" + "&" +
+                $"entry.1563159789={AnswerNumber1}" + "&" +
+                $"entry.862288868={AnswerTranslate1}" + "&" +
+                $"entry.959152022={AnswerNumber2}" + "&" +
+                $"entry.524487442={AnswerTranslate2}" + "&" +
+                $"entry.967136510={AnswerNumber3}" + "&" +
+                $"entry.249557633={AnswerTranslate3}" + "&" +
+                $"entry.1531334054={AnswerNumber4}" + "&" +
+                $"entry.1364966582={AnswerTranslate4}";
+            if (AnswerNumber5 != null && AnswerTranslate5 != null)
+            {
+                requestString += "&" +
+                $"entry.51961822={AnswerNumber5}" + "&" +
+                $"entry.1313525750={AnswerTranslate5}";
+            }
+            client.GetAsync(requestString).GetAwaiter().GetResult();
         }
 
         private bool IsTranslateChanged()
