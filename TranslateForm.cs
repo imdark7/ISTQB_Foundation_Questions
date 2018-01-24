@@ -108,41 +108,18 @@ namespace ISTQB_Foundation_Questions
         {
             if (IsTranslateChanged())
             {
-                var dialog = MessageBox.Show(this,
-                        @"Вы действительно хотите заменить перевод?",
-                        @"Замена перевода", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                        MessageBoxDefaultButton.Button1);
-
-                if (dialog == DialogResult.No)
-                {
-                }
-                if (dialog == DialogResult.Yes)
-                {
-                    UpdateTranslate();
-                    if (_question.Answers.Count < 5)
-                    {
-                        SendDataToGoogleSpreadsheets(
-                            _question.Id, QuestionTranslateTextBox.Text,
-                            _question.Answers[0].Id, _answers[0].Value.Text,
-                            _question.Answers[1].Id, _answers[1].Value.Text,
-                            _question.Answers[2].Id, _answers[2].Value.Text,
-                            _question.Answers[3].Id, _answers[3].Value.Text
-                        );
-                    }
-                    else
-                    {
-                        SendDataToGoogleSpreadsheets(
-                            _question.Id, QuestionTranslateTextBox.Text,
-                            _question.Answers[0].Id, _answers[0].Value.Text,
-                            _question.Answers[1].Id, _answers[1].Value.Text,
-                            _question.Answers[2].Id, _answers[2].Value.Text,
-                            _question.Answers[3].Id, _answers[3].Value.Text,
-                            _question.Answers[4].Id, _answers[4].Value.Text
-                        );
-                    }
-                }
+                UpdateTranslate();
+                SendDataToGoogleSpreadsheets(
+                    _question.Id, QuestionTranslateTextBox.Text,
+                    _question.Answers[0].Id, _answers[0].Value.Text,
+                    _question.Answers[1].Id, _answers[1].Value.Text,
+                    _question.Answers[2].Id, _answers[2].Value.Text,
+                    _question.Answers.Count > 3 ? _question.Answers[3]?.Id : null,
+                    _question.Answers.Count > 3 ? _answers[3].Value.Text : null,
+                    _question.Answers.Count > 4 ? _question.Answers[4]?.Id : null,
+                    _question.Answers.Count > 4 ? _answers[4].Value.Text : null
+                );
             }
-            
             Close();
         }
 
@@ -155,8 +132,8 @@ namespace ISTQB_Foundation_Questions
             string AnswerTranslate2,
             long AnswerNumber3,
             string AnswerTranslate3,
-            long AnswerNumber4,
-            string AnswerTranslate4,
+            long? AnswerNumber4 = null,
+            string AnswerTranslate4 = null,
             long? AnswerNumber5 = null,
             string AnswerTranslate5 = null
             )
@@ -171,14 +148,18 @@ namespace ISTQB_Foundation_Questions
                 $"entry.959152022={AnswerNumber2}" + "&" +
                 $"entry.524487442={AnswerTranslate2}" + "&" +
                 $"entry.967136510={AnswerNumber3}" + "&" +
-                $"entry.249557633={AnswerTranslate3}" + "&" +
-                $"entry.1531334054={AnswerNumber4}" + "&" +
-                $"entry.1364966582={AnswerTranslate4}";
+                $"entry.249557633={AnswerTranslate3}";
+            if (AnswerNumber4 != null && AnswerTranslate4 != null)
+            {
+                requestString += "&" +
+                    $"entry.1531334054={AnswerNumber4}" + "&" +
+                    $"entry.1364966582={AnswerTranslate4}";
+            }
             if (AnswerNumber5 != null && AnswerTranslate5 != null)
             {
                 requestString += "&" +
-                $"entry.51961822={AnswerNumber5}" + "&" +
-                $"entry.1313525750={AnswerTranslate5}";
+                    $"entry.51961822={AnswerNumber5}" + "&" +
+                    $"entry.1313525750={AnswerTranslate5}";
             }
             client.GetAsync(requestString).GetAwaiter().GetResult();
         }

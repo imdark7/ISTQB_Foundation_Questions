@@ -73,11 +73,24 @@ namespace ISTQB_Foundation_Questions.Properties {
         ///INSERT INTO `Questions` (Id,EnglishText,RussianText,Resource,Theme) VALUES (1,&apos;How many test cases are required to cover 100% 0 - switch coverage respectively from X2?
         ///Exhibit:&apos;,NULL,&apos;q1&apos;,NULL),
         /// (2,&apos;From a Testing perspective, what are the MAIN purposes of Configuration Management?: 
-        ///i) Identifying the version of software under  [остаток строки не уместился]&quot;;.
+        ///i) Identifying the version of softw [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string createDb {
             get {
                 return ResourceManager.GetString("createDb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на {
+        ///  &quot;type&quot;: &quot;service_account&quot;,
+        ///  &quot;project_id&quot;: &quot;istqb-data-translate&quot;,
+        ///  &quot;private_key_id&quot;: &quot;3332a0d3a18972e9f1e5aa887363eb4471b8895e&quot;,
+        ///  &quot;private_key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCGja6bGNUI3+IE\nuey2T/P+HWMFdQByqupTCXg56SoPNfK2Mc6+xM+SDeQEhaAuA8LxRokxOqO9i12G\nKRhyvfwea4IqlJSJIjK3amXKri9kWOalwN2XjMR0W1JwWlugLfg/lx8tIqAj9LaB\ncBpns13wkV1Me2mQg5lHudBGopBT/xXc0GXM3qoViXmQJU91D3cbHkkPFedY3VIk\n+U1tRM2kmZuVDii6Ki80RvSt5+Sbd5Rw9KS5EuHZHKZ7F5IveEAUhfXli/GbM4 [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string credentials {
+            get {
+                return ResourceManager.GetString("credentials", resourceCulture);
             }
         }
         

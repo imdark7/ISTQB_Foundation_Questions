@@ -24,8 +24,8 @@ namespace ISTQB_Foundation_Questions
             NextButton.Visible = false;
             pictureBox1.Visible = false;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            answersGroupBox.MinimumSize = new Size(420, 0);
-            answersGroupBox.MaximumSize = new Size(420, 0);
+            answersGroupBox.MinimumSize = new Size(400, 0);
+            answersGroupBox.MaximumSize = new Size(800, 0);
             strategyComboBox.SelectedIndex = 0;
 
             questions = SqlHelper.ReadQuestions();
@@ -42,7 +42,7 @@ namespace ISTQB_Foundation_Questions
                 answersGroupBox.Location = new Point(questionLabel.Location.X, 20 + questionLabel.Location.Y + questionLabel.Height);
 
                 ShuffleAndPlaceAnswers();
-
+                answersGroupBox.MinimumSize = new Size(Math.Max(400, questionLabel.Width), 0);
                 Text = "Вопрос №" + question.Id;
                 QuestionNumber.Text = question.Id.ToString();
 
@@ -52,7 +52,7 @@ namespace ISTQB_Foundation_Questions
                     pictureBox1.Image = (Bitmap)rm.GetObject(question.Resource);
                     pictureBox1.Size = pictureBox1.Image.Size;
                     pictureBox1.Width += 10;
-                    pictureBox1.Location = new Point(answersGroupBox.Width + answersGroupBox.Location.X + 20, 20);
+                    pictureBox1.Location = new Point(Math.Max(answersGroupBox.Width, questionLabel.Width) + answersGroupBox.Location.X + 20, 20);
                     pictureBox1.Visible = true;
                 }
                 else
@@ -150,10 +150,10 @@ namespace ISTQB_Foundation_Questions
 
         private string GetText(Answer answer)
         {
-            var englishAnswer = GetStringsList(answer.EnglishText.Split(' '), 50);
+            var englishAnswer = GetStringsList(answer.EnglishText.Split(' '), 100);
             if (answer.RussianText != null)
             {
-                var russianAnswer = GetStringsList(answer.RussianText.Split(' '), 50);
+                var russianAnswer = GetStringsList(answer.RussianText.Split(' '), 100);
                 int separatorLength;
                 if (englishAnswer.Count > 1 || russianAnswer.Count > 1)
                 {
@@ -189,7 +189,7 @@ namespace ISTQB_Foundation_Questions
             var englishQuestion = new List<string>();
             foreach (var newString in newStrings)
             {
-                englishQuestion.AddRange(GetStringsList(newString.Split(' '), 55));
+                englishQuestion.AddRange(GetStringsList(newString.Split(' '), 110));
             }
             if (question.RussianText != null)
             {
@@ -197,7 +197,7 @@ namespace ISTQB_Foundation_Questions
                 var russianQuestion = new List<string>();
                 foreach (var newString in newRussianStrings)
                 {
-                    russianQuestion.AddRange(GetStringsList(newString.Split(' '), 55));
+                    russianQuestion.AddRange(GetStringsList(newString.Split(' '), 110));
                 }
                 int separatorLength;
                 if (englishQuestion.Count > 1 || russianQuestion.Count > 1)
@@ -275,6 +275,7 @@ namespace ISTQB_Foundation_Questions
             NextButton.Visible = false;
             CheckAnswerButton.Visible = true;
             GetNewQuestion();
+            RefreshData();
         }
 
         private void ShareTranslateButton_Click(object sender, EventArgs e)
@@ -290,6 +291,7 @@ namespace ISTQB_Foundation_Questions
             answersGroupBox.Location = new Point(questionLabel.Location.X, 20 + questionLabel.Location.Y + questionLabel.Height);
 
             ShuffleAndPlaceAnswers();
+            answersGroupBox.MinimumSize = new Size(Math.Max(400, questionLabel.Width), 0);
 
             Text = "Вопрос №" + question.Id;
             QuestionNumber.Text = question.Id.ToString();
@@ -300,7 +302,7 @@ namespace ISTQB_Foundation_Questions
                 pictureBox1.Image = (Bitmap)rm.GetObject(question.Resource);
                 pictureBox1.Size = pictureBox1.Image.Size;
                 pictureBox1.Width += 10;
-                pictureBox1.Location = new Point(answersGroupBox.Width + answersGroupBox.Location.X + 20, 20);
+                pictureBox1.Location = new Point(Math.Max(answersGroupBox.Width, questionLabel.Width) + answersGroupBox.Location.X + 20, 20);
                 pictureBox1.Visible = true;
             }
             else
@@ -313,6 +315,8 @@ namespace ISTQB_Foundation_Questions
                     answersGroupBox.Location.Y + 10 + answersGroupBox.Height
                 );
             NextButton.Location = CheckAnswerButton.Location;
+            NextButton.Visible = false;
+            CheckAnswerButton.Visible = true;
             ShareTranslateButton.Location = new Point
                 (
                     answersGroupBox.Location.X,
@@ -369,6 +373,13 @@ namespace ISTQB_Foundation_Questions
                 question = questions.First(q => q.Id == parsedId);
                 RefreshData();
             }
+        }
+
+        private void test_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            SpreadSheetsHelper.UpdateTranslateData();
+            this.Enabled = true;
         }
     }
 }

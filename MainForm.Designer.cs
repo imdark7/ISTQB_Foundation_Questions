@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.QuestionNumber = new System.Windows.Forms.TextBox();
             this.strategyComboBox = new System.Windows.Forms.ComboBox();
+            this.test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // 
             // GoToQuestion
             // 
-            this.GoToQuestion.Location = new System.Drawing.Point(326, 12);
+            this.GoToQuestion.Location = new System.Drawing.Point(318, 12);
             this.GoToQuestion.Name = "GoToQuestion";
             this.GoToQuestion.Size = new System.Drawing.Size(29, 25);
             this.GoToQuestion.TabIndex = 5;
@@ -131,7 +132,7 @@
             // NextQuestion
             // 
             this.NextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.NextQuestion.Location = new System.Drawing.Point(361, 12);
+            this.NextQuestion.Location = new System.Drawing.Point(353, 12);
             this.NextQuestion.Name = "NextQuestion";
             this.NextQuestion.Size = new System.Drawing.Size(45, 25);
             this.NextQuestion.TabIndex = 5;
@@ -142,7 +143,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(183, 16);
+            this.label1.Location = new System.Drawing.Point(178, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 6;
@@ -150,7 +151,7 @@
             // 
             // QuestionNumber
             // 
-            this.QuestionNumber.Location = new System.Drawing.Point(263, 13);
+            this.QuestionNumber.Location = new System.Drawing.Point(255, 13);
             this.QuestionNumber.MaxLength = 4;
             this.QuestionNumber.Name = "QuestionNumber";
             this.QuestionNumber.Size = new System.Drawing.Size(57, 23);
@@ -168,6 +169,17 @@
             this.strategyComboBox.TabIndex = 8;
             this.strategyComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // test
+            // 
+            this.test.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.test.Location = new System.Drawing.Point(404, 12);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(36, 25);
+            this.test.TabIndex = 9;
+            this.test.Text = "sync";
+            this.test.UseVisualStyleBackColor = true;
+            this.test.Click += new System.EventHandler(this.test_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,6 +187,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(579, 444);
+            this.Controls.Add(this.test);
             this.Controls.Add(this.strategyComboBox);
             this.Controls.Add(this.QuestionNumber);
             this.Controls.Add(this.label1);
@@ -210,6 +223,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox QuestionNumber;
         private System.Windows.Forms.ComboBox strategyComboBox;
+        private System.Windows.Forms.Button test;
     }
 }
 

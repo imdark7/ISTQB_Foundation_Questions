@@ -164,22 +164,22 @@ Exhibit:',NULL,'q13',NULL),
  (14,'Which of the following is a KEY test closure task?',NULL,NULL,NULL),
  (15,'What is beta testing?',NULL,NULL,NULL),
  (16,'Given the following fragment of code, how many tests are required for 100% decision coverage?
-if width &gt; length 
+if width > length 
 then 
 biggest_dimension = width 
-if height &gt; width 
+if height > width 
 then
 biggest_dimension = height 
 end_if 
 else 
 biggest_dimension = length 
-if height &gt; length
+if height > length
 then 
 biggest_dimension = height 
 end_if 
 end_if',NULL,NULL,NULL),
  (17,'You have designed test cases to provide 100% statement and 100% decision coverage for the following fragment of code.
-if width &gt; length
+if width > length
 then 
 biggest_dimension = width 
 else 
@@ -188,9 +188,9 @@ end_if
 
 The following has been added to the bottom of the code fragment above. 
 
-print "Biggest dimension is " &amp; biggest_dimension 
-print "Width: " &amp; width 
-print "Length: " &amp; length 
+print "Biggest dimension is "  and  biggest_dimension 
+print "Width: "  and  width 
+print "Length: "  and  length 
 
 How many more test cases are required?',NULL,NULL,NULL),
  (18,'Which defects are OFTEN much cheaper to remove?',NULL,NULL,NULL),
@@ -280,9 +280,9 @@ iv) Functional testing of the interfaces between modules.',NULL,NULL,NULL),
  (59,'Which of the following is a potential risk in using test support tools?',NULL,NULL,NULL),
  (60,'How many test cases are needed to achieve 100 % statement coverage?
 if ((temperature &lt; 0) or 
-(temperature &gt; 100)) {
+(temperature > 100)) {
 alert ("DANGER");
-if ((speed &gt; 100) and (load &lt;= 50)) {
+if ((speed > 100) and (load &lt;= 50)) {
 speed = 50;
 }
 } else {
@@ -506,7 +506,7 @@ IV. Allocating schedule contingencies',NULL,NULL,NULL),
 Key reason why developers have difficulty testing their own work is :',NULL,NULL,NULL),
  (183,'Statement Coverage will not check for the following.',NULL,NULL,NULL),
  (184,'Given the Following program
-IF X &lt;&gt;= Z
+IF X &lt;>= Z
 THEN Statement 2;
 END
 
@@ -528,7 +528,7 @@ fi',NULL,NULL,NULL),
  (191,'In a review meeting a moderator is a person who',NULL,NULL,NULL),
  (192,'Acceptance test cases are based on what?',NULL,NULL,NULL),
  (193,'Which documents specify features to - be tested, approach, and pass / fail criteria?',NULL,NULL,NULL),
- (194,'Independent Verification &amp; Validation is',NULL,NULL,NULL),
+ (194,'Independent Verification  and  Validation is',NULL,NULL,NULL),
  (195,'Defect Management process does not include',NULL,NULL,NULL),
  (196,'What is a group of test activities that are organized and managed together?',NULL,NULL,NULL),
  (197,'What is the key difference between (a) contract and regulation acceptance testing, and (b) alpha and beta testing?',NULL,NULL,NULL),
@@ -586,7 +586,7 @@ Close outlook',NULL,NULL,NULL),
  (235,'What is the purpose of test completion criteria in a test plan:',NULL,NULL,NULL),
  (236,'Given the following code, which is true: 
 
-IF A &gt; B THEN
+IF A > B THEN
 C = A � B 
 ELSE
 C = A + B 
@@ -611,7 +611,7 @@ s = s + 1;
 if (a &lt; S) {
 t = 10;
 }
-} else if (p &gt; q) {
+} else if (p > q) {
 t = 5;
 }',NULL,NULL,NULL),
  (245,'Which of the following statements about the component testing standard is false:',NULL,NULL,NULL),
@@ -641,10 +641,10 @@ v. Early test design takes more effort',NULL,NULL,NULL),
  (257,'Given the following code, which is true about the minimum number of test cases required for full statement and branch coverage:
 Read P 
 Read Q
-IF P+Q &gt; 100 THEN 
+IF P+Q > 100 THEN 
 Print "Large" 
 ENDIF
-If P &gt; 50 THEN 
+If P > 50 THEN 
 Print "P Large" 
 ENDIF',NULL,NULL,NULL),
  (258,'The place to start if you want a (new) test tool is:',NULL,NULL,NULL),
@@ -691,9 +691,9 @@ iv. The size of the testing Team',NULL,NULL,NULL),
 Disc = 0
 Order-qty = 0
 Read Order-qty
-If Order-qty &gt;=20 then
+If Order-qty >=20 then
 Disc = 0.05
-If Order-qty &gt;=100 then
+If Order-qty >=100 then
 Disc =0.1
 End if
 End if',NULL,NULL,NULL),
@@ -759,10 +759,10 @@ iv. Size of the Development Team',NULL,NULL,NULL),
  (294,'Minimum Tests Required for Statement Coverage and Branch Coverage:
 Read P
 Read Q
-If p+q &gt; 100 then
+If p+q > 100 then
 Print "Large"
 End if
-If p &gt; 50 then
+If p > 50 then
 Print "pLarge"
 End if',NULL,NULL,NULL),
  (295,'Match every stage of the software Development Life cycle with the Testing Life cycle:
@@ -798,9 +798,9 @@ b. Effort required to perform activities
 c. Reallocation of resources',NULL,NULL,NULL),
  (309,'When do you stop testing?',NULL,NULL,NULL),
  (310,'What is the smallest number of test cases required to Provide 100% branch coverage?
-If(x&gt;y) x=x+1; 
+If(x>y) x=x+1; 
 else y=y+1; 
-while(x&gt;y) 
+while(x>y) 
 { 
 y=x*y; x=x+1; 
 }',NULL,NULL,NULL),
@@ -958,7 +958,7 @@ V. Meeting schedule milestones',NULL,NULL,NULL),
  (408,'Features to be tested, approach refinements and feature pass / fail criteria BUT excluding environmental needs should be specified in which document?',NULL,NULL,NULL),
  (409,'Test basis documentation is analyzed in which phase of testing',NULL,NULL,NULL),
  (410,'Which one is not the task of test leader?',NULL,NULL,NULL),
- (411,'if (condition1 &amp;&amp; (condition2 function1()))
+ (411,'if (condition1  and  and  (condition2 function1()))
 statement1;
 else
 statement2;',NULL,NULL,NULL),
@@ -996,7 +996,7 @@ builds of software and testware',NULL,NULL,NULL),
  (432,'Which test approach uses all combinations of input values and preconditions?',NULL,NULL,NULL),
  (433,'Which technique describes process flows through a system based on its likely usage?',NULL,NULL,NULL),
  (434,'Regression testing mainly helps in',NULL,NULL,NULL),
- (435,'Review is one of the methods of V&amp;V. The other methods are',NULL,NULL,NULL),
+ (435,'Review is one of the methods of V and V. The other methods are',NULL,NULL,NULL),
  (436,'Which review is inexpensive',NULL,NULL,NULL),
  (437,'Following are some of the testing risks',NULL,NULL,NULL),
  (438,'Random Testing',NULL,NULL,NULL),
@@ -1148,7 +1148,8 @@ ii. First letter of the day, e.g., T can mean Tuesday or Thursday
 iii. Leap year
 iv. Number of days in a month 
 v. Three-digit days and months',NULL,NULL,NULL),
- (510,'Which of the following are valid objectives for incident reports?i. Provide developers and other parties with feedback about the problem to enable identification, isolation and correction as necessary.
+ (510,'Which of the following are valid objectives for incident reports?
+i. Provide developers and other parties with feedback about the problem to enable identification, isolation and correction as necessary.
 ii. Provide ideas for test process improvement.
 iii. Provide a vehicle for assessing tester competence.
 iv. Provide testers with a means of tracking the quality of the system under test.',NULL,NULL,NULL),
@@ -1157,14 +1158,20 @@ i To localise a defect.
 ii To fix a defect.
 iii To show value.
 iv To increase the range of testing.',NULL,NULL,NULL),
- (512,'Consider the following techniques. Which are static and which are dynamic techniques?',NULL,NULL,NULL),
+ (512,'Consider the following techniques. Which are static and which are dynamic techniques?
+i. Equivalence Partitioning.
+ii. Use Case Testing.
+iii.Data Flow Analysis.
+iv.Exploratory Testing.
+v. Decision Testing.
+vi Inspections.',NULL,NULL,NULL),
  (513,'Given the following code, which statement is true about the minimum number of test cases required for full statement and branch coverage?
 Read p
 Read q
-IF p+q &gt; 100 THEN
+IF p+q > 100 THEN
 Print "Large"
 ENDIF
-IF p &gt; 50 THEN
+IF p > 50 THEN
 Print "p Large"
 ENDIF',NULL,NULL,NULL),
  (514,'Which of the following is a benefit of independent testing?',NULL,NULL,NULL),
@@ -1236,9 +1243,9 @@ IV. Phase removed',NULL,NULL,NULL),
  (548,'How many test cases are needed to achieve 100 % condition coverage?
 
 if ((temperature &lt; 0) or 
-(temperature &gt; 100)) { 
+(temperature > 100)) { 
 alert ("DANGER");
-if ((speed &gt; 100) and (load &lt;= 50)) { 
+if ((speed > 100) and (load &lt;= 50)) { 
 speed = 50;
 }
 } else {
@@ -1399,7 +1406,7 @@ r = r + 1;
 if (r &lt; 5) {
 s = 10;
 } 
-} else if (p &gt; q) { 
+} else if (p > q) { 
 s = 5;
 }',NULL,NULL,NULL),
  (617,'Which of the following BEST describes the task partition between test manager and tester?',NULL,NULL,NULL),
@@ -1648,9 +1655,9 @@ Z. Statements exercised',NULL,NULL,NULL),
 1. I place any item in the shopping cart.
 2. I place any other (different) item in the shopping cart.
 3. I remove the first item from the shopping cart, but leave the second item in the cart.
-4. I click the &lt; Checkout &gt; button.
+4. I click the &lt; Checkout > button.
 5. I expect the system to display the first checkout screen. Instead, it gives the pop-up error message, ''No items in shopping cart. Click to continue shopping.''
-6. I click &lt; Okay &gt;.
+6. I click &lt; Okay >.
 7. I expect the system to return to the main window to allow me to continue adding and removing items from the cart. Instead, the browser terminates.
 8. The failure described in steps 5 and 7 occurred in each of three attempts to perform steps 1, 2, 3, 4 and 6.
 Assume that no other narrative information is included in the report. Which of the following important aspects of a good incident report is missing from this incident report?',NULL,NULL,NULL),
@@ -1748,7 +1755,7 @@ IV. Rigorous testing is used to prove that all failures have been found.',NULL,N
  (750,'Popular specification-based techniques are:',NULL,NULL,NULL),
  (751,'As a test leader you are collecting measures about defects. You recognize that after the first test cycle � covering all requirements - subsystem C has a defect density that is 150% higher than the average. Subsystem A on the other hand has a defect density that is 60% lower than the average.
 
-COLOR: navy"&gt;What conclusions for the next test cycle could you draw from this fact?',NULL,NULL,NULL),
+COLOR: navy">What conclusions for the next test cycle could you draw from this fact?',NULL,NULL,NULL),
  (752,'Which of the following is a TRUE statement about the use of static analysis tools?',NULL,NULL,NULL),
  (753,'Which of the following best describes typical test exit criteria?',NULL,NULL,NULL),
  (754,'How does testing contribute to software quality?',NULL,NULL,NULL),
@@ -1811,9 +1818,9 @@ End Procedure X',NULL,NULL,NULL),
  (770,'Which of the following statements about static analysis is FALSE?',NULL,NULL,NULL),
  (771,'Given the following sample of pseudo code:
 
-Roman''"&gt;01 Input number of male rabbits
+Roman''">01 Input number of male rabbits
 02 Input number of female rabbits
-03 If male rabbits &gt; 0 and female rabbits &gt; 0 then
+03 If male rabbits > 0 and female rabbits > 0 then
 04   Input Do you want to breed (Yes / No)
 05   If breed = "No"
 06     Print "Keep male and female rabbits apart!"
@@ -1854,7 +1861,7 @@ d. Use case testing
 e. Decision testing',NULL,NULL,NULL),
  (781,'Which statement BEST describes the role of testing?
  
-Roman''"&gt;',NULL,NULL,NULL),
+Roman''">',NULL,NULL,NULL),
  (782,'The following table shows 6 test procedures (P to U) that must now be entered into a test execution schedule.
 
 Business severity is regarded as the most important element in determining the sequence of the test procedures, but other dependencies must also be taken into consideration. Regression testing can only be run once all other tests have completed.
@@ -1945,11 +1952,11 @@ Z. Robustness testing
  (810,'Given the following sample of pseudo code:
  
 Read A, B, C;
-If A &gt; B then
-Print "Primary ratio is" &amp; A / B;
+If A > B then
+Print "Primary ratio is"  and  A / B;
 End If
-If A &gt; C then
-Print "Secondary ration is" &amp; A / C;
+If A > C then
+Print "Secondary ration is"  and  A / C;
 End If.
  
 Which of the following test cases would achieve 100% statement coverage?',NULL,NULL,NULL),
@@ -1979,7 +1986,13 @@ What is the expected result for each of the following test cases?
  
 P. Gold frequent flyer, travelling in Economy class.
 Q. Silver frequent flyer, travelling in Business class.',NULL,'q820',NULL),
- (821,'Which of the following activities would improve how a tool is deployed within an organization?',NULL,NULL,NULL),
+ (821,'Which of the following activities would improve how a tool is deployed within an organization?
+
+I. Roll out the tool across the organisation as quickly as possible to all users.
+II. Conduct periodic lessons learnt reviews with tool users
+III. Provide technical support to the test team for each type of tool
+IV. If a tool is not being used, withdraw it and look for an alternative
+V. Make sure processes are improved to reflect a new tool',NULL,NULL,NULL),
  (822,'Place the stages of the Fundamental Test Process in the usual order (by time).
  
 a. Test closure activities.
@@ -2104,7 +2117,7 @@ If ExamScore &lt;= 75 then
    Print "Candidate has failed"
 Else
    Print "Candidate has passed"
-   If ExamScore &gt;= 120 then
+   If ExamScore >= 120 then
       Print "Candidate has achieved a distinction"
    EndIf
 EndIf.
@@ -2170,7 +2183,7 @@ d. It can include debugging.',NULL,NULL,NULL),
  (869,'Retirement of software or a system would trigger which type of testing?',NULL,NULL,NULL),
  (870,'Which of the following statements about black box and white box techniques is correct?',NULL,NULL,NULL),
  (871,'Which of the following are characteristics of good testing in any life cycle model?
-normal"&gt; 
+normal"> 
 a. Every development activity has a corresponding test activity.
 b. Testers review development documents early.
 c. There are separate levels for component and system integration test.
@@ -2333,7 +2346,7 @@ R7 - Financial Data � Low Complexity
 R8 - Diagram Data � Low Complexity
 R9 - Changes on user profile � Medium Complexity
  
-Requirements logical dependencies (A -&gt; B means that B is dependent on A.)
+Requirements logical dependencies (A -> B means that B is dependent on A.)
 
 How would you structure the test execution schedule according to the requirement dependencies?',NULL,'q910',NULL),
  (911,'What is the benefit of independent testing?',NULL,NULL,NULL),
@@ -2560,8 +2573,8 @@ What important information did the engineer leave out?',NULL,NULL,NULL),
 READ A
 READ B
 READ C
-IF C&gt;A THEN
-IF C&gt;B THEN
+IF C>A THEN
+IF C>B THEN
 PRINT "C must be smaller than at least one number"
 ELSE
 PRINT "Proceed to next stage"
@@ -2585,7 +2598,7 @@ IV Product documentation',NULL,NULL,NULL),
  (1033,'The following code segment contains a potential "divide by 0" error.
 J=50
 K=1
-while (N&gt;=10) and (N&lt;=10) loop
+while (N>=10) and (N&lt;=10) loop
 M [K] = J/N
 K = K + 1
 N = N 1
@@ -2660,6 +2673,7 @@ Fare = fare * discountRate;',NULL,NULL,NULL),
 (iv) Test Planning and Control
 (v) Test Analysis and Design',NULL,NULL,NULL),
  (1060,'One of the differences between the Modified Condition Decision Coverage and the Condition Coverage is:',NULL,NULL,NULL);
+
 CREATE TABLE IF NOT EXISTS `Answers` (
 	`Id`	INTEGER UNIQUE,
 	`QuestionId`	INTEGER,
@@ -2668,7 +2682,9 @@ CREATE TABLE IF NOT EXISTS `Answers` (
 	`IsCorrect`	INTEGER,
 	PRIMARY KEY(`Id`)
 );
-INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (1,1,'4',NULL,0),
+
+INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES 
+ (1,1,'4',NULL,0),
  (2,1,'1',NULL,0),
  (3,1,'3',NULL,0),
  (4,1,'2',NULL,1),
@@ -2792,10 +2808,10 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (122,31,'Tool support for static testing.',NULL,0),
  (123,31,'Tool support for test execution and logging.',NULL,1),
  (124,31,'Tool support for the management of testing and tests.',NULL,0),
- (125,32,'i, ii &amp; iv are true, iii &amp; v are false.',NULL,0),
- (126,32,'ii &amp; iii are true, i, iv &amp; v are false.',NULL,1),
- (127,32,'iv &amp; v are true, i, ii &amp; iii are false.',NULL,0),
- (128,32,'i, ii &amp; iii are true iv &amp; v are false.',NULL,0),
+ (125,32,'i, ii  and  iv are true, iii  and  v are false.',NULL,0),
+ (126,32,'ii  and  iii are true, i, iv  and  v are false.',NULL,1),
+ (127,32,'iv  and  v are true, i, ii  and  iii are false.',NULL,0),
+ (128,32,'i, ii  and  iii are true iv  and  v are false.',NULL,0),
  (129,33,'1Y, 2Z, 3X, 4W.',NULL,1),
  (130,33,'1X ,2W, 3Z, 4Y.',NULL,0),
  (131,33,'1Z, 2X, 3W, 4Y.',NULL,0),
@@ -3137,10 +3153,10 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (463,117,'Test Implementation and execution',NULL,1),
  (464,117,'Test Closure Activities',NULL,0),
  (465,117,'Evaluating exit criteria and reporting',NULL,0),
- (466,118,'ii is True; i, iii, iv &amp; v are False',NULL,0),
+ (466,118,'ii is True; i, iii, iv  and  v are False',NULL,0),
  (467,118,'i,ii,iii are true and iv is false',NULL,0),
- (468,118,'ii &amp; iii are True; i, iv are False',NULL,1),
- (469,118,'ii, iii &amp; iv are True; i is false',NULL,0),
+ (468,118,'ii  and  iii are True; i, iv are False',NULL,1),
+ (469,118,'ii, iii  and  iv are True; i is false',NULL,0),
  (470,119,'Requirements',NULL,0),
  (471,119,'Documentation',NULL,0),
  (472,119,'Test cases',NULL,0),
@@ -3243,7 +3259,7 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (569,143,'Test leader: S; Tester: T, U and V',NULL,0),
  (570,144,'Performance',NULL,0),
  (571,144,'Record/Playback',NULL,1),
- (572,144,'A. &amp; B.',NULL,0),
+ (572,144,'A.  and  B.',NULL,0),
  (573,144,'None',NULL,0),
  (574,145,'Integration testing',NULL,0),
  (575,145,'System testing',NULL,0),
@@ -3265,8 +3281,8 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (591,149,'Scripting language',NULL,0),
  (592,149,'Process-driven testing',NULL,0),
  (593,149,'Keyword-driven testing',NULL,1),
- (594,150,'Speed &amp; efficiency',NULL,0),
- (595,150,'Accuracy &amp; precision',NULL,0),
+ (594,150,'Speed  and  efficiency',NULL,0),
+ (595,150,'Accuracy  and  precision',NULL,0),
  (596,150,'All of the above',NULL,1),
  (597,150,'None of the above',NULL,0),
  (598,151,'Random testing',NULL,0),
@@ -3339,7 +3355,7 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (665,167,'None of the above',NULL,0),
  (666,168,'Gray Box Testing',NULL,1),
  (667,168,'Hybrid Testing',NULL,0),
- (668,168,'A. &amp; B.',NULL,0),
+ (668,168,'A.  and  B.',NULL,0),
  (669,168,'None',NULL,0),
  (670,169,'Initiation, Preparation, Informal Review Meeting, Status, Rework, and Follow up.',NULL,0),
  (671,169,'Planning, Preparation, Technical Review, Rework, and Closure.',NULL,0),
@@ -3457,9 +3473,9 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (783,197,'(a) are conducted by regulators and (b) are performed by system administrato rs',NULL,0),
  (784,197,'(a) are mandatory test for government applications and (b) are usually optional',NULL,0),
  (785,197,'(a) are for custom-developed software and (b) are for off � the - shelf software',NULL,1),
- (786,198,'v &amp; w are true, x � z are false',NULL,0),
- (787,198,'w, x &amp; y are true, v &amp; z are false',NULL,0),
- (788,198,'w &amp; y are true, v, x &amp; z are false',NULL,1),
+ (786,198,'v  and  w are true, x � z are false',NULL,0),
+ (787,198,'w, x  and  y are true, v  and  z are false',NULL,0),
+ (788,198,'w  and  y are true, v, x  and  z are false',NULL,1),
  (789,198,'w is true, v, x y and z are false',NULL,0),
  (790,198,'All of the above are true',NULL,0),
  (791,199,'Execution',NULL,0),
@@ -3508,8 +3524,8 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (834,209,'It may be difficult to determine if the test has passed or failed',NULL,1),
  (835,209,'We cannot automate the user inputs',NULL,0),
  (836,210,'This question is difficult to answer',NULL,0),
- (837,210,'The answer depends on the contract with the client, special requirements if any &amp; risks your organization is willing to take',NULL,1),
- (838,210,'The answer depends on the experience &amp; maturity of your developers',NULL,0),
+ (837,210,'The answer depends on the contract with the client, special requirements if any  and  risks your organization is willing to take',NULL,1),
+ (838,210,'The answer depends on the experience  and  maturity of your developers',NULL,0),
  (839,210,'The answer should be standardized for the software development industry',NULL,0),
  (840,211,'To freeze requirements',NULL,0),
  (841,211,'To understand user needs',NULL,0),
@@ -3718,18 +3734,7 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES (
  (1044,255,'Replaying inputs according to a programmed script',NULL,0),
  (1045,255,'Comparison of expected outcomes with actual outcomes',NULL,0),
  (1046,255,'Recording test inputs',NULL,0),
- (1047,255,'Reading test values from a data file
-Q. 256: Consider the following statements about early test design:
-i. Early test design can prevent fault multiplication
-ii. Faults found during early test design are more expensive to fix 
-iii. Early test design can find faults
-iv. Early test design can cause changes to the requirements 
-v. Early test design takes more effort
-A. i, iii &amp; iv are true. Ii &amp; v are false 
-B. iii is true, I, ii, iv &amp; v are false
-C. iii &amp; iv are true. i, ii &amp; v are false 
-D. i, iii, iv &amp; v are true, ii us false
-E. i &amp; iii are true, ii, iv &amp; v are false',NULL,0),
+ (1047,255,'Reading test values from a data file',NULL,0),
  (1048,257,'1 test for statement coverage, 3 for branch coverage',NULL,0),
  (1049,257,'1 test for statement coverage, 2 for branch coverage',NULL,1),
  (1050,257,'1 test for statement coverage, 1 for branch coverage',NULL,0),
@@ -3856,10 +3861,10 @@ E. i &amp; iii are true, ii, iv &amp; v are false',NULL,0),
  (1171,287,'Integration Level Test Cases',NULL,0),
  (1172,287,'Unit Level Test Cases',NULL,0),
  (1173,287,'Program specifications',NULL,0),
- (1174,288,'i &amp; ii are true, iii, iv &amp; v are false',NULL,0),
- (1175,288,'ii, iii &amp; iv are true, i &amp; v are false',NULL,0),
- (1176,288,'ii &amp; iv are true, i, iii &amp; v are false',NULL,1),
- (1177,288,'ii is true, i, iii, iv &amp; v are false',NULL,0),
+ (1174,288,'i  and  ii are true, iii, iv  and  v are false',NULL,0),
+ (1175,288,'ii, iii  and  iv are true, i  and  v are false',NULL,0),
+ (1176,288,'ii  and  iv are true, i, iii  and  v are false',NULL,1),
+ (1177,288,'ii is true, i, iii, iv  and  v are false',NULL,0),
  (1178,289,'Wilson, de Costa and Morgan',NULL,0),
  (1179,289,'Go, Cheenaswamimuthusami and Venkatsewaran',NULL,0),
  (1180,289,'Smit, Smyth and Smithson',NULL,0),
@@ -4401,7 +4406,7 @@ E. i &amp; iii are true, ii, iv &amp; v are false',NULL,0),
  (1716,423,'All of the above',NULL,1),
  (1717,424,'Test first approach',NULL,0),
  (1718,424,'Test-driven development',NULL,0),
- (1719,424,'Both A. &amp; B.',NULL,1),
+ (1719,424,'Both A.  and  B.',NULL,1),
  (1720,424,'None of the above',NULL,0),
  (1721,425,'Support for the management of tests and the testing activities carried out',NULL,0),
  (1722,425,'Interfaces to test execution tools',NULL,0),
@@ -4466,7 +4471,7 @@ E. i &amp; iii are true, ii, iv &amp; v are false',NULL,0),
  (1781,439,'Introducing the tool to the organization should start with a pilot project.',NULL,1),
  (1782,440,'Functional characteristics',NULL,0),
  (1783,440,'Non functional characteristics',NULL,1),
- (1784,440,'Both A. &amp; B.',NULL,0),
+ (1784,440,'Both A.  and  B.',NULL,0),
  (1785,440,'None of the above',NULL,0),
  (1786,441,'Road map for testing',NULL,1),
  (1787,441,'Tells about the actual results and expected results',NULL,0),
@@ -4546,19 +4551,12 @@ E. i &amp; iii are true, ii, iv &amp; v are false',NULL,0),
  (1861,459,'A minimal test set that achieves 100% statement coverage will generally detect more faults than one that achieves 100% branch coverage.',NULL,1),
  (1862,460,'Both checks for interactions: integration for components, use case for actions',NULL,1),
  (1863,460,'Both are black-box techniques: integration is low-level, use case is high-level',NULL,0),
- (1864,460,'Both are static testing: developers perform integration, users execute use case tests
-C. Both are V&amp;V techniques: integration is for validation, use case is for verification',NULL,0),
+ (1864,460,'Both are static testing: developers perform integration, users execute use case tests',NULL,0),
+ (1864001,460,'Both are V and V techniques: integration is for validation, use case is for verification',NULL,0),
  (1865,461,'An inspection is lead by the author, whilst a walkthrough is lead by a trained moderator.',NULL,0),
  (1866,461,'An inspection has a trained leader, whilst a walkthrough has no leader.',NULL,0),
  (1867,461,'Authors are not present during inspections, whilst they are during walkthroughs.',NULL,0),
- (1868,461,'A walkthrough is lead by the author, whilst an inspection is lead by a trained moderator.
-&lt;&lt;&lt;&lt;&lt;&lt; ===================
-&gt;&gt;&gt;&gt;&gt;&gt;
-Q. 462: Which of these activities provides the biggest potential cost saving from the use of CAST?
-A. Test management
-B. Test design
-C. Test execution
-D. Test planning',NULL,1),
+ (1868,461,'A walkthrough is lead by the author, whilst an inspection is lead by a trained moderator.',NULL,1),
  (1869,463,'Incident resolution is the responsibility of the author of the software under test.',NULL,1),
  (1870,463,'Incidents may be raised against user requirements.',NULL,0),
  (1871,463,'Incidents require investigation and/or correction.',NULL,0),
@@ -4622,7 +4620,7 @@ D. Test planning',NULL,1),
  (1929,478,'Metrics from previous similar projects',NULL,0),
  (1930,478,'Discussions with the development team',NULL,0),
  (1931,478,'Time allocated for regression testing',NULL,0),
- (1932,478,'A. &amp; B.',NULL,1),
+ (1932,478,'A.  and  B.',NULL,1),
  (1933,479,'v-3,w-2,x-1,y-5,z-4',NULL,0),
  (1934,479,'v-2,w-5,x-1,y-4,z-3',NULL,0),
  (1935,479,'v-3,w-4,x-1,y-5,z-2',NULL,1),
@@ -4671,10 +4669,10 @@ D. Test planning',NULL,1),
  (1978,490,'29, 30, 31.',NULL,0),
  (1979,490,'18, 29, 30.',NULL,1),
  (1980,490,'17, 29, 31.',NULL,0),
- (1981,491,'ii is True; i, iii, iv &amp; v are False',NULL,0),
- (1982,491,'i &amp; v are True; ii, iii &amp; iv are False',NULL,0),
- (1983,491,'ii &amp; iii are True; i, iv &amp; v are False',NULL,0),
- (1984,491,'ii, iii &amp; iv are True; i &amp; v are False',NULL,1),
+ (1981,491,'ii is True; i, iii, iv  and  v are False',NULL,0),
+ (1982,491,'i  and  v are True; ii, iii  and  iv are False',NULL,0),
+ (1983,491,'ii  and  iii are True; i, iv  and  v are False',NULL,0),
+ (1984,491,'ii, iii  and  iv are True; i  and  v are False',NULL,1),
  (1985,492,'Project risks are potential failure areas in the software or system; product risks are risks that surround the project�s capability to deliver its objectives.',NULL,0),
  (1986,492,'Project risks are the risks that surround the project�s capability to deliver its objectives; product risks are potential failure areas in the software or system.',NULL,1),
  (1987,492,'Project risks are typically related to supplier issues, organizational factors and technical issues; product risks are typically related to skill and staff shortages.',NULL,0),
@@ -4847,10 +4845,10 @@ D. Test planning',NULL,1),
  (2154,536,'Manual support testing',NULL,1),
  (2155,536,'Walkthrough',NULL,0),
  (2156,536,'Compiler based testing',NULL,0),
- (2157,537,'I, II &amp;III',NULL,1),
- (2158,537,'I, II &amp;IV',NULL,0),
- (2159,537,'II, III&amp;IV',NULL,0),
- (2160,537,'I, III&amp;IV',NULL,0),
+ (2157,537,'I, II  and III',NULL,1),
+ (2158,537,'I, II  and IV',NULL,0),
+ (2159,537,'II, III and IV',NULL,0),
+ (2160,537,'I, III and IV',NULL,0),
  (2161,538,'Equivalence partitioning',NULL,1),
  (2162,538,'Boundary value analysis',NULL,0),
  (2163,538,'Decision table',NULL,0),
@@ -4873,7 +4871,7 @@ D. Test planning',NULL,1),
  (2180,542,'Add more resources so that the slippage should be avoided',NULL,0),
  (2181,543,'Integrity, Response time',NULL,0),
  (2182,543,'Concurrency test, Scalability',NULL,0),
- (2183,543,'Update &amp; Rollback, Response time',NULL,1),
+ (2183,543,'Update  and  Rollback, Response time',NULL,1),
  (2184,543,'Concurrency test, Integrity',NULL,0),
  (2185,544,'Error Guessing',NULL,0),
  (2186,544,'Boundary Value Analysis',NULL,0),
@@ -4890,7 +4888,7 @@ D. Test planning',NULL,1),
  (2197,547,'Horizontal tracebility',NULL,1),
  (2198,547,'Depth tracebility',NULL,0),
  (2199,547,'Vertical tracebility',NULL,0),
- (2200,547,'Horizontal &amp; Vertical tracebilities',NULL,0),
+ (2200,547,'Horizontal  and  Vertical tracebilities',NULL,0),
  (2201,548,'5',NULL,1),
  (2202,548,'4',NULL,0),
  (2203,548,'2',NULL,0),
@@ -4899,10 +4897,10 @@ D. Test planning',NULL,1),
  (2206,549,'Inter system testing',NULL,0),
  (2207,549,'Re-testing',NULL,0),
  (2208,549,'Integration testing',NULL,1),
- (2209,550,'I, II&amp;III',NULL,0),
- (2210,550,'II, III&amp;IV',NULL,0),
- (2211,550,'I, II&amp;IV',NULL,1),
- (2212,550,'I, III&amp;IV',NULL,0),
+ (2209,550,'I, II and III',NULL,0),
+ (2210,550,'II, III and IV',NULL,0),
+ (2211,550,'I, II and IV',NULL,1),
+ (2212,550,'I, III and IV',NULL,0),
  (2213,551,'Narrow band Delphi',NULL,0),
  (2214,551,'Wide band Delphi',NULL,1),
  (2215,551,'Bespoke Delphi',NULL,0),
@@ -4927,10 +4925,10 @@ D. Test planning',NULL,1),
  (2234,556,'The extent to which the software can be used by many different users',NULL,0),
  (2235,556,'The capability of the software to be moved to a different platform',NULL,0),
  (2236,556,'The capability of one system to be coupled with another system',NULL,0),
- (2237,557,'I, II&amp;III',NULL,0),
- (2238,557,'II, III &amp;IV',NULL,0),
- (2239,557,'I, III &amp;IV',NULL,1),
- (2240,557,'I, II &amp; IV',NULL,0),
+ (2237,557,'I, II and III',NULL,0),
+ (2238,557,'II, III  and IV',NULL,0),
+ (2239,557,'I, III  and IV',NULL,1),
+ (2240,557,'I, II  and  IV',NULL,0),
  (2241,558,'I and II only',NULL,0),
  (2242,558,'II and III only',NULL,0),
  (2243,558,'I and III only',NULL,0),
@@ -5036,7 +5034,7 @@ D. Test planning',NULL,1),
  (2343,584,'Progressive testing',NULL,1),
  (2344,584,'Recovery testing',NULL,0),
  (2345,584,'Regression testing',NULL,0),
- (2346,585,'These are cheapest to detect during early phases of development &amp; becomes more &amp; more expensive to fix in the later phases.',NULL,1),
+ (2346,585,'These are cheapest to detect during early phases of development  and  becomes more  and  more expensive to fix in the later phases.',NULL,1),
  (2347,585,'Although faults are most expensive to find during early development phases, they are cheapest to fix then.',NULL,0),
  (2348,585,'Faults are cheapest to find in the early development phases but the most expensive to fix then.',NULL,0),
  (2349,585,'They are easiest to find during system testing but the most expensive to fix then.',NULL,0),
@@ -5063,14 +5061,7 @@ D. Test planning',NULL,1),
  (2370,591,'Software quality engineering must evaluate all errors.',NULL,0),
  (2371,591,'A balance of white-box and black-box testing is necessary.',NULL,0),
  (2372,591,'A single root cause taxonomy should be used by all projects.',NULL,0),
- (2373,591,'Feedback to the individuals who introduced the defect is essential.
-&lt;&lt;&lt;&lt;&lt;&lt; ===================
-&gt;&gt;&gt;&gt;&gt;&gt;
-Q. 592: When software reliability measures are used to determine when to stop testing, the best types of test cases to use are those that
-A. Push the system beyond its designed operation limits and are likely to make the system fail
-B. Exercise unusual and obscure scenarios that may not have been considered in design
-C. Exercise system functions in proportion to the frequency they will be used in the released product
-D. Exercise the most complicated and the most error-prone portions of the system',NULL,1),
+ (2373,591,'Feedback to the individuals who introduced the defect is essential.',NULL,1),
  (2374,593,'Static analysis can find defects that are likely to be missed by dynamic testing.',NULL,0),
  (2375,593,'Static analysis is a good way to force failures in the software.',NULL,1),
  (2376,593,'Static analysis tools examine code or other types of product documentation.',NULL,0),
@@ -5201,7 +5192,6 @@ p=5,q=4,r=-1',NULL,0),
  (2497,624,'Communications between the system and other systems.',NULL,0),
  (2498,624,'Ensuring that the system is fit for business purpose.',NULL,0),
  (2499,624,'The defined behavior of the whole system or product.',NULL,1),
- (2500,624,'The defined behavior of the whole system or product.',NULL,0),
  (2501,625,'Selecting test conditions based on an analysis of the test object.',NULL,1),
  (2502,625,'Scheduling test analysis and design, implementation and execution activities.',NULL,0),
  (2503,625,'Assigning resources for the activities to be performed.',NULL,0),
@@ -5992,16 +5982,10 @@ p=5,q=4,r=-1',NULL,0),
  (3284,820,'P. Offer free upgrade to Business but cannot upgrade to First. Q. Offer discounted upgrade to First',NULL,0),
  (3285,820,'P. Offer free upgrade to First. Q. Cannot upgrade to First',NULL,0),
  (3286,820,'P. Offer discounted upgrade to First. Q. Offer free upgrade to First',NULL,0),
- (3287,821,'Roll out the tool across the organisation as quickly as possible to all users.',NULL,0),
- (3288,821,'Conduct periodic lessons learnt reviews with tool users.',NULL,0),
- (3289,821,'Provide technical support to the test team for each type of tool.',NULL,0),
- (3290,821,'If a tool is not being used, withdraw it and look for an alternative.',NULL,1),
- (3291,821,'Make sure processes are improved to reflect a new tool.
- 
-A. a, b and c
-B. a, c and d
-C. c, d and e
-D. b, c and e',NULL,0),
+ (3287,821,'I, II and III',NULL,0),
+ (3288,821,'I, III and IV',NULL,0),
+ (3289,821,'III, IV and V',NULL,0),
+ (3290,821,'II, III and V',NULL,1),
  (3292,822,'c, b, d, e, a',NULL,1),
  (3293,822,'c, b, e, d, a',NULL,0),
  (3294,822,'c, b, d, a, e',NULL,0),
@@ -6346,10 +6330,10 @@ D. b, c and e',NULL,0),
  (3634,909,'Thoroughness measures, reliability measures, degree of tester independence and product completeness.',NULL,0),
  (3635,909,'Thoroughness measures, reliability measures, test cost, time to market and product completeness, availability of testable code.',NULL,0),
  (3636,909,'Time to market, residual defects, tester qualification, degree of tester independence, thoroughness measures and test cost.',NULL,0),
- (3637,910,'R4 &gt; R5 &gt; R1 &gt; R2 &gt; R3 &gt; R7 &gt; R8 &gt; R6 &gt; R9.',NULL,0),
- (3638,910,'R1 &gt; R2 &gt; R3 &gt; R4 &gt; R5 &gt; R7 &gt; R8 &gt; R6 &gt; R9.',NULL,0),
- (3639,910,'R1 &gt; R2 &gt; R4 &gt; R5 &gt; R3 &gt; R7 &gt; R8 &gt; R6 &gt; R9.',NULL,1),
- (3640,910,'R1 &gt; R2 &gt; R3 &gt; R7 &gt; R8 &gt; R4 &gt; R5 &gt; R6 &gt; R9.',NULL,0),
+ (3637,910,'R4 > R5 > R1 > R2 > R3 > R7 > R8 > R6 > R9.',NULL,0),
+ (3638,910,'R1 > R2 > R3 > R4 > R5 > R7 > R8 > R6 > R9.',NULL,0),
+ (3639,910,'R1 > R2 > R4 > R5 > R3 > R7 > R8 > R6 > R9.',NULL,1),
+ (3640,910,'R1 > R2 > R3 > R7 > R8 > R4 > R5 > R6 > R9.',NULL,0),
  (3641,911,'More work gets done because testers do not disturb the developers all the time.',NULL,0),
  (3642,911,'Independent testers tend to be unbiased and find different defects than the developers.',NULL,1),
  (3643,911,'Independent testers do not need extra education and training.',NULL,0),
@@ -6555,17 +6539,17 @@ D. b, c and e',NULL,0),
  (3843,962,'i is true and ii,iii,iv are false',NULL,1),
  (3844,962,'i,ii,iii are true and iv is false',NULL,0),
  (3845,962,'ii is true and i,iii,iv are false.',NULL,0),
- (3846,963,'ii is True; i, iii, iv &amp; v are False',NULL,0),
+ (3846,963,'ii is True; i, iii, iv  and  v are False',NULL,0),
  (3847,963,'i,ii,iii are true and iv is false',NULL,1),
- (3848,963,'ii &amp; iii are True; i, iv are False',NULL,0),
- (3849,963,'ii, iii &amp; iv are True; i is false',NULL,0),
+ (3848,963,'ii  and  iii are True; i, iv are False',NULL,0),
+ (3849,963,'ii, iii  and  iv are True; i is false',NULL,0),
  (3850,964,'Test Analysis and Design',NULL,0),
  (3851,964,'Test Planning and control',NULL,0),
  (3852,964,'Test Closure Activities',NULL,1),
  (3853,964,'Evaluating exit criteria and reporting',NULL,0),
  (3854,965,'Testers',NULL,0),
  (3855,965,'Developers',NULL,1),
- (3856,965,'Testers &amp; Developers',NULL,0),
+ (3856,965,'Testers  and  Developers',NULL,0),
  (3857,965,'None',NULL,0),
  (3858,966,'Test Case Specification',NULL,0),
  (3859,966,'Test Design Specification',NULL,0),
@@ -6618,10 +6602,10 @@ D. b, c and e',NULL,0),
  (3906,978,'System testing',NULL,0),
  (3907,978,'Usability testing',NULL,0),
  (3908,978,'Performance testing',NULL,0),
- (3909,978,'Both B &amp; C',NULL,1),
- (3910,979,'2 is a valid reason; 1,3,4 &amp; 5 are not',NULL,0),
+ (3909,978,'Both B  and  C',NULL,1),
+ (3910,979,'2 is a valid reason; 1,3,4  and  5 are not',NULL,0),
  (3911,979,'1,2,3,4 are valid reasons; 5 is not',NULL,0),
- (3912,979,'1,2,3 are valid reasons; 4 &amp; 5 are not',NULL,0),
+ (3912,979,'1,2,3 are valid reasons; 4  and  5 are not',NULL,0),
  (3913,979,'All of them are valid reasons for failure',NULL,1),
  (3914,980,'You shorten the time required for testing',NULL,0),
  (3915,980,'You do the best testing in the time available',NULL,1),
@@ -6697,10 +6681,10 @@ D. b, c and e',NULL,0),
  (3985,996,'Data Flow testing.',NULL,0),
  (3986,996,'Statement testing.',NULL,0),
  (3987,996,'Syntax testing.',NULL,1),
- (3988,997,'1&amp;2 are true and 3 is false.',NULL,1),
- (3989,997,'1,2&amp;3 are true.',NULL,0),
- (3990,997,'1 is true, 2&amp;3 are false.',NULL,0),
- (3991,997,'1&amp;2 are false, 3 is true',NULL,0),
+ (3988,997,'1 and 2 are true and 3 is false.',NULL,1),
+ (3989,997,'1,2 and 3 are true.',NULL,0),
+ (3990,997,'1 is true, 2 and 3 are false.',NULL,0),
+ (3991,997,'1 and 2 are false, 3 is true',NULL,0),
  (3992,998,'Usability testing.',NULL,1),
  (3993,998,'Statement Coverage.',NULL,0),
  (3994,998,'Dataflow testing.',NULL,0),
@@ -6970,11 +6954,11 @@ D. b, c and e',NULL,0),
  (4258,462,'Test design',NULL,0),
  (4259,462,'Test execution',NULL,1),
  (4260,462,'Test planning',NULL,0),
- (4261,256,'i, iii &amp; iv are true. Ii &amp; v are false ',NULL,1),
- (4262,256,'iii is true, I, ii, iv &amp; v are false',NULL,0),
- (4263,256,'iii &amp; iv are true. i, ii &amp; v are false',NULL,0),
- (4264,256,'i, iii, iv &amp; v are true, ii us false',NULL,0),
- (4265,256,'i &amp; iii are true, ii, iv &amp; v are false',NULL,0),
+ (4261,256,'i, iii  and  iv are true. Ii  and  v are false ',NULL,1),
+ (4262,256,'iii is true, I, ii, iv  and  v are false',NULL,0),
+ (4263,256,'iii  and  iv are true. i, ii  and  v are false',NULL,0),
+ (4264,256,'i, iii, iv  and  v are true, ii us false',NULL,0),
+ (4265,256,'i  and  iii are true, ii, iv  and  v are false',NULL,0),
  (4266,91,'i, ii, iii is true and iv is false',NULL,0),
  (4267,91,'ii,iii,iv is true and i is false',NULL,1),
  (4268,91,'i is true and ii,iii,iv are false',NULL,0),
@@ -6984,6 +6968,20 @@ D. b, c and e',NULL,0),
  (4272,581,'A � Issue membership, no discount, B � Don�t Issue membership.',NULL,1),
  (4273,581,'A � Issue membership, no discount, B- Issue membership with 10% discount.',NULL,0);
 COMMIT;</value>
+  </data>
+  <data name="credentials" xml:space="preserve">
+    <value>{
+  "type": "service_account",
+  "project_id": "istqb-data-translate",
+  "private_key_id": "3332a0d3a18972e9f1e5aa887363eb4471b8895e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCGja6bGNUI3+IE\nuey2T/P+HWMFdQByqupTCXg56SoPNfK2Mc6+xM+SDeQEhaAuA8LxRokxOqO9i12G\nKRhyvfwea4IqlJSJIjK3amXKri9kWOalwN2XjMR0W1JwWlugLfg/lx8tIqAj9LaB\ncBpns13wkV1Me2mQg5lHudBGopBT/xXc0GXM3qoViXmQJU91D3cbHkkPFedY3VIk\n+U1tRM2kmZuVDii6Ki80RvSt5+Sbd5Rw9KS5EuHZHKZ7F5IveEAUhfXli/GbM4yH\n5ytHGCDUzatPWmPz0PO6lRVvw70hhQMoft3x2yJr6nBC1h7jf0kSLqOylz7gIamD\nFAKgUe8PAgMBAAECggEABP0v4jRTgda7TK2QJ1pjk6KHT2Z9M8M+mQGa4ZrRomq/\nqx3BqrUldSbqs3g47jvZeJTC9X5VH+wQ9a6EZ4y/0mjuFKIZt9P6yW46g/9dZn0d\nYDv8e2gOyLmyHtRa3V+W+tShpUzJX0vtkHMVp46xBwB80x8oVOFsR4qOPHA+pb6b\nzspKpGkjst0J4GyIP5OfHZu8Ynzj/8CIP5UVeeGuksf7BJeledkFso+EWIj+PcDG\nXPjt20RY2hxIg7FH7xO/5ikpdjoIVs3aidUo87i4sCeu1SsheNp4k04boI6j91uO\nvWvdUd+8LsbOSokI1dLOBxzwTV6CMjA9F3OYB6YkwQKBgQC9XDVUA4m2yYizE2/H\nC3VJf0CpSbt5VLoCmJefd1iOeiGwb3rZTyP8DH4wgEU7ubEfl56lWyreZqnYri2I\nR9QnCc8IfMb/w1HnND6YsIOgs6fOmibGvLhHyLOIeNS8zELFFq5cZsYUrEHXuqpS\nvb2FzrpaBIJ9pbspf3+UH7tmPwKBgQC159aL6xEX9VPseD3I4Ad1U+1tY+AsNc6c\nBS7KF7k1orgz/Q0WXywsdPuo/hZAgczD41A4qA0VhN7Ts9zN0VcW8b1/sv0kUrLw\nlGACYHb1m4Z4HUqDTQPfYQ72qmvkGXhhyQ83Z5LV2/+2hUrWK7HD53zHA4opB5N0\ndUkOStdjMQKBgFDvF0/4TyUUEFxRw2W0rQWj4RQ6EmnyX6p6Y9vhm7UR2FJb44r7\n+2pgQJMkT/MOE/lnyYPtam4yPQgCsi1cXf3tgFKlWjy408nZF6QVVb0a7G8ujcJF\nqRHtY2bCFlM3jpZEcnPF7YWqdl3pR6EjvdxyFk4hPVDMxCkheHrr8SHrAoGBAKvG\nTSx9gvvL2D9iYH3TSFe8NGXrPaKiAQQGROPkOSp0CVxWpsgsgWtN4OP5ZIvvxqxo\neLW3w/tBKKZjn6vf9kydZSQ0oqVtTrqucmdsLonKHtZIWrfYv0JuxhGaZx3UC4DT\nu4HHVbqL8FKsVjoestRbQdIw/oO2OsFri9xqQjDRAoGAQrbQTviyRWJA264/e55m\naeAsIEjt4u3Y67KLvOlAqfwQzHreloU5IAdIfJJ3Vi4b/3g07Ieow/jRgLmWprA2\nPyqMR7QpLKSEKbP+y4j2jniSlTlAIVhp+OW9WfMlQ/KGRfppsnziCaF3mJEiGJ9v\nFYwJtzA5DlERXkg4jLT0BzE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "translate@istqb-data-translate.iam.gserviceaccount.com",
+  "client_id": "116519368182318263100",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/translate%40istqb-data-translate.iam.gserviceaccount.com"
+}</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="goodJob" type="System.Resources.ResXFileRef, System.Windows.Forms">
