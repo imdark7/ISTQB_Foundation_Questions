@@ -5,7 +5,7 @@ using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using ISTQB_Foundation_Questions.Properties;
 
-namespace ISTQB_Foundation_Questions
+namespace ISTQB_Foundation_Questions.Helpers
 {
     public static class SpreadSheetsHelper
     {
@@ -71,10 +71,15 @@ namespace ISTQB_Foundation_Questions
                         SqlHelper.UpdateAnswerTranslate(answer3.Id, sortedRow[8].ToString());
                     }
 
-                    var answer4 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[9].ToString()));
-                    if (string.IsNullOrEmpty(answer4?.RussianText) && sortedRow.Count > 10 && !string.IsNullOrEmpty(sortedRow[10].ToString()))
+                    if (sortedRow.Count > 10)
                     {
-                        SqlHelper.UpdateAnswerTranslate(answer4.Id, sortedRow[10].ToString());
+                        var answer4 =
+                            question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[9].ToString()));
+                        if (string.IsNullOrEmpty(answer4?.RussianText) && sortedRow.Count > 10 &&
+                            !string.IsNullOrEmpty(sortedRow[10].ToString()))
+                        {
+                            SqlHelper.UpdateAnswerTranslate(answer4.Id, sortedRow[10].ToString());
+                        }
                     }
 
                     if (sortedRow.Count > 12)

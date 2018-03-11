@@ -4,9 +4,10 @@ using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Windows.Forms;
+using ISTQB_Foundation_Questions.Models;
 using ISTQB_Foundation_Questions.Properties;
 
-namespace ISTQB_Foundation_Questions
+namespace ISTQB_Foundation_Questions.Helpers
 {
     public static class SqlHelper
     {
@@ -51,6 +52,43 @@ namespace ISTQB_Foundation_Questions
             var command = requestCondition == null
                 ? new SQLiteCommand("SELECT * FROM [Questions]", sqlConnection)
                 : new SQLiteCommand($"SELECT * FROM [Questions] WHERE {requestCondition}", sqlConnection);
+            var list = new List<Question>();
+            try
+            {
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    var question = new Question
+                    {
+                        Id = reader.GetInt64(0),
+                        EnglishText = reader.GetString(1),
+                        RussianText = reader.IsDBNull(2) ? null : reader.GetString(2),
+                        Resource = reader.IsDBNull(3) ? null : reader.GetString(3),
+                        Theme = reader.IsDBNull(4) ? null : reader.GetString(4)
+                    };
+                    question.Answers = ReadAnswers(question.Id);
+                    list.Add(question);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+            return list;
+        }
+
+        public static List<Question> ReadRandomQuestions(int quantity)
+        {
+            var sqlConnection = NewSqLiteConnection();
+            sqlConnection.Open();
+            var command = new SQLiteCommand($"SELECT * FROM [Questions] ORDER BY RANDOM() LIMIT {quantity};", sqlConnection);
             var list = new List<Question>();
             try
             {

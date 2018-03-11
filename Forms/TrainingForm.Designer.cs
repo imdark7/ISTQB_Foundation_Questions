@@ -1,6 +1,6 @@
-﻿namespace ISTQB_Foundation_Questions
+﻿namespace ISTQB_Foundation_Questions.Forms
 {
-    partial class MainForm
+    partial class TrainingForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -52,7 +52,7 @@
             this.answersGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.answersGroupBox.Name = "answersGroupBox";
             this.answersGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.answersGroupBox.Size = new System.Drawing.Size(8, 7);
+            this.answersGroupBox.Size = new System.Drawing.Size(8, 24);
             this.answersGroupBox.TabIndex = 2;
             this.answersGroupBox.TabStop = false;
             // 
@@ -180,7 +180,7 @@
             this.test.UseVisualStyleBackColor = true;
             this.test.Click += new System.EventHandler(this.test_Click);
             // 
-            // MainForm
+            // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,8 +202,9 @@
             this.Controls.Add(this.questionLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "MainForm";
+            this.Name = "TrainingForm";
             this.Text = "MainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrainingForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,6 +212,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.GroupBox answersGroupBox;
         private System.Windows.Forms.Button CheckAnswerButton;
         private System.Windows.Forms.Button NextButton;
@@ -226,4 +228,3 @@
         private System.Windows.Forms.Button test;
     }
 }
-

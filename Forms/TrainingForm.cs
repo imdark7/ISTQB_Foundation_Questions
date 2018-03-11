@@ -4,12 +4,15 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using ISTQB_Foundation_Questions.Helpers;
+using ISTQB_Foundation_Questions.Models;
 using ISTQB_Foundation_Questions.Properties;
 
-namespace ISTQB_Foundation_Questions
+namespace ISTQB_Foundation_Questions.Forms
 {
-    public partial class MainForm : Form
+    public partial class TrainingForm : Form
     {
+        private readonly Form _parentForm;
         private readonly List<Question> questions;
         private Question question;
         private readonly List<RadioButton> answerRadioButtons = new List<RadioButton>();
@@ -18,8 +21,9 @@ namespace ISTQB_Foundation_Questions
         private bool IsRandomQuestionStrategy;
         private int questionIndex;
 
-        public MainForm()
+        public TrainingForm(Form parentForm)
         {
+            _parentForm = parentForm;
             InitializeComponent();
             NextButton.Visible = false;
             pictureBox1.Visible = false;
@@ -38,7 +42,7 @@ namespace ISTQB_Foundation_Questions
             {
                 SetNextIndex();
                 question = questions[questionIndex];
-                questionLabel.Text = GetText(question);
+                questionLabel.Text = question.GetText();
                 answersGroupBox.Location = new Point(questionLabel.Location.X, 20 + questionLabel.Location.Y + questionLabel.Height);
 
                 ShuffleAndPlaceAnswers();
@@ -119,7 +123,7 @@ namespace ISTQB_Foundation_Questions
             {
                 var radioButton = new RadioButton
                 {
-                    Text = GetText(answer),
+                    Text = answer.GetText(),
                     AutoSize = true,
                     Parent = answersGroupBox,
                     Location = new Point(0, 0)
@@ -148,108 +152,7 @@ namespace ISTQB_Foundation_Questions
             }
         }
 
-        private string GetText(Answer answer)
-        {
-            var englishAnswer = GetStringsList(answer.EnglishText.Split(' '), 100);
-            if (answer.RussianText != null)
-            {
-                var russianAnswer = GetStringsList(answer.RussianText.Split(' '), 100);
-                int separatorLength;
-                if (englishAnswer.Count > 1 || russianAnswer.Count > 1)
-                {
-                    separatorLength = 100;
-                }
-                else
-                {
-                    separatorLength = Math.Max(englishAnswer[0].Length, russianAnswer[0].Length);
-                }
-                var separator = "-";
-                while (separator.Length < separatorLength && separator.Length < 20)
-                {
-                    separator += "-";
-                }
-                englishAnswer.Add(separator);
-                englishAnswer.AddRange(russianAnswer);
-            }
-            var result = "";
-            foreach (var item in englishAnswer)
-            {
-                result += item;
-                if (englishAnswer.Last() != item)
-                {
-                    result += "\n\r";
-                }
-            }
-            return result;
-        }
-
-        private string GetText(Question question)
-        {
-            var newStrings = question.EnglishText.Split(new[] { "\r\n" }, StringSplitOptions.None);
-            var englishQuestion = new List<string>();
-            foreach (var newString in newStrings)
-            {
-                englishQuestion.AddRange(GetStringsList(newString.Split(' '), 110));
-            }
-            if (question.RussianText != null)
-            {
-                var newRussianStrings = question.RussianText.Split(new[] { "\r\n" }, StringSplitOptions.None);
-                var russianQuestion = new List<string>();
-                foreach (var newString in newRussianStrings)
-                {
-                    russianQuestion.AddRange(GetStringsList(newString.Split(' '), 110));
-                }
-                int separatorLength;
-                if (englishQuestion.Count > 1 || russianQuestion.Count > 1)
-                {
-                    separatorLength = 100;
-                }
-                else
-                {
-                    separatorLength = Math.Max(englishQuestion[0].Length, russianQuestion[0].Length);
-                }
-                var separator = "-";
-                while (separator.Length < separatorLength)
-                {
-                    separator += "-";
-                }
-                englishQuestion.Add(separator);
-                englishQuestion.AddRange(russianQuestion);
-            }
-            var result = "";
-            for (var i = 0; i < englishQuestion.Count; i++)
-            {
-                result += englishQuestion[i];
-                if (i != englishQuestion.Count - 1)
-                {
-                    result += "\r\n";
-                }
-            }
-            return result;
-        }
-
-        private static List<string> GetStringsList(IEnumerable<string> words, int length)
-        {
-            var list = new List<string>();
-            foreach (var word in words)
-            {
-                if (list.Count == 0)
-                {
-                    list.Add(word);
-                    continue;
-                }
-                var lastElement = list.Last();
-                if (lastElement.Length + 1 + word.Length < length)
-                {
-                    list[list.LastIndexOf(lastElement)] += " " + word;
-                }
-                else
-                {
-                    list.Add(word);
-                }
-            }
-            return list;
-        }
+        
 
         private void CheckAnswerButton_Click(object sender, EventArgs e)
         {
@@ -287,7 +190,7 @@ namespace ISTQB_Foundation_Questions
         {
             question = SqlHelper.ReadQuestions($"[Id] = '{question.Id}'").First();
 
-            questionLabel.Text = GetText(question);
+            questionLabel.Text = question.GetText();
             answersGroupBox.Location = new Point(questionLabel.Location.X, 20 + questionLabel.Location.Y + questionLabel.Height);
 
             ShuffleAndPlaceAnswers();
@@ -341,11 +244,15 @@ namespace ISTQB_Foundation_Questions
                 PreviousQuestion.Enabled = false;
                 NextQuestion.Enabled = false;
             }
-            else
+            else if (((ComboBox) sender).SelectedIndex == 1)
             {
                 IsRandomQuestionStrategy = false;
                 PreviousQuestion.Enabled = true;
                 NextQuestion.Enabled = true;
+            }
+            else
+            {
+                
             }
         }
 
@@ -377,9 +284,15 @@ namespace ISTQB_Foundation_Questions
 
         private void test_Click(object sender, EventArgs e)
         {
-            this.Enabled = false;
+            Enabled = false;
             SpreadSheetsHelper.UpdateTranslateData();
-            this.Enabled = true;
+            Enabled = true;
+        }
+
+        private void TrainingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _parentForm.Show();
+            _parentForm.Activate();
         }
     }
 }

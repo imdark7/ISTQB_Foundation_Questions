@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ISTQB_Foundation_Questions
+namespace ISTQB_Foundation_Questions.Models
 {
     public class Question
     {
@@ -10,9 +10,5 @@ namespace ISTQB_Foundation_Questions
         public string Resource;
         public List<Answer> Answers;
         public string Theme;
-
-        public Question()
-        {
-        }
     }
 }
