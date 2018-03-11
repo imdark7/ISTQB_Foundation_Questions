@@ -240,7 +240,7 @@ namespace ISTQB_Foundation_Questions.Forms
                 }
             }
             endExamButton.BackColor = SystemColors.Control;
-            //endExamButton.Enabled = false;
+            endExamButton.Enabled = false;
             testIsOver = true;
             DisplayQuestion(questionIndex);
             timer.Stop();
