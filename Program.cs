@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using ISTQB_Foundation_Questions.Forms;
+using ISTQB_Foundation_Questions.Helpers;
+using ISTQB_Foundation_Questions.Models;
 
 namespace ISTQB_Foundation_Questions
 {
@@ -14,7 +17,7 @@ namespace ISTQB_Foundation_Questions
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new StartForm());
             //ParseQuestions(); //парсинг файла с тестами
         }
 

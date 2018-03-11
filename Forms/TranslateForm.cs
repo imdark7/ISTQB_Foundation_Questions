@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
 using System.Windows.Forms;
+using ISTQB_Foundation_Questions.Helpers;
+using ISTQB_Foundation_Questions.Models;
 
-namespace ISTQB_Foundation_Questions
+namespace ISTQB_Foundation_Questions.Forms
 {
     public partial class TranslateForm : Form
     {
         private readonly Question _question;
-        private readonly MainForm _parentForm;
+        private readonly TrainingForm _parentForm;
         private readonly List<KeyValuePair<TextBox, TextBox>> _answers = new List<KeyValuePair<TextBox, TextBox>>();
         readonly Label _tempLabel = new Label { Visible = false, Location = new Point(1, 1), AutoSize = true };
-        public TranslateForm(Question question, MainForm parentForm)
+        public TranslateForm(Question question, TrainingForm parentForm)
         {
             _question = question;
             _parentForm = parentForm;

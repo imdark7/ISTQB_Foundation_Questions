@@ -1,4 +1,4 @@
-﻿namespace ISTQB_Foundation_Questions
+﻿namespace ISTQB_Foundation_Questions.Models
 {
     public class Answer
     {
@@ -7,9 +7,5 @@
         public string EnglishText;
         public string RussianText;
         public bool IsCorrect;
-
-        public Answer()
-        {
-        }
     }
 }

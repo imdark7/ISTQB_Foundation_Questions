@@ -1,4 +1,4 @@
-﻿namespace ISTQB_Foundation_Questions
+﻿namespace ISTQB_Foundation_Questions.Forms
 {
     partial class TranslateForm
     {
