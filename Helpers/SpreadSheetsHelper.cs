@@ -11,7 +11,7 @@ namespace ISTQB_Foundation_Questions.Helpers
     {
         public static void UpdateTranslateData()
         {
-            string[] scopes = {SheetsService.Scope.Spreadsheets};
+            string[] scopes = { SheetsService.Scope.Spreadsheets };
             var aplicationName = "istqb data translate";
 
             var credential = GoogleCredential.FromJson(Resources.credentials).CreateScoped(scopes);
@@ -48,48 +48,32 @@ namespace ISTQB_Foundation_Questions.Helpers
                 var question = questions.Find(q => q.Id.ToString().Equals(sortedRow[1].ToString()));
                 if (question != null)
                 {
-                    if (string.IsNullOrEmpty(question.RussianText) && !string.IsNullOrEmpty(sortedRow[2].ToString()))
+                    if (!string.IsNullOrEmpty(sortedRow[2].ToString()))
                     {
                         SqlHelper.UpdateQuestionTranslate(question.Id, sortedRow[2].ToString());
                     }
 
                     var answer1 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[3].ToString()));
-                    if (string.IsNullOrEmpty(answer1?.RussianText) && !string.IsNullOrEmpty(sortedRow[4].ToString()))
-                    {
-                        SqlHelper.UpdateAnswerTranslate(answer1.Id, sortedRow[4].ToString());
-                    }
+                    SqlHelper.UpdateAnswerTranslate(answer1.Id, sortedRow[4].ToString());
 
                     var answer2 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[5].ToString()));
-                    if (string.IsNullOrEmpty(answer2?.RussianText) && !string.IsNullOrEmpty(sortedRow[6].ToString()))
-                    {
-                        SqlHelper.UpdateAnswerTranslate(answer2.Id, sortedRow[6].ToString());
-                    }
+                    SqlHelper.UpdateAnswerTranslate(answer2.Id, sortedRow[6].ToString());
 
                     var answer3 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[7].ToString()));
-                    if (string.IsNullOrEmpty(answer3?.RussianText) && !string.IsNullOrEmpty(sortedRow[8].ToString()))
-                    {
-                        SqlHelper.UpdateAnswerTranslate(answer3.Id, sortedRow[8].ToString());
-                    }
+                    SqlHelper.UpdateAnswerTranslate(answer3.Id, sortedRow.Count > 8 ? sortedRow[8].ToString() : "");
 
-                    if (sortedRow.Count > 10)
+                    if (sortedRow.Count > 9)
                     {
                         var answer4 =
                             question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[9].ToString()));
-                        if (string.IsNullOrEmpty(answer4?.RussianText) && sortedRow.Count > 10 &&
-                            !string.IsNullOrEmpty(sortedRow[10].ToString()))
-                        {
-                            SqlHelper.UpdateAnswerTranslate(answer4.Id, sortedRow[10].ToString());
-                        }
+                        SqlHelper.UpdateAnswerTranslate(answer4.Id, sortedRow.Count > 10 ? sortedRow[10].ToString() : "");
                     }
 
-                    if (sortedRow.Count > 12)
+                    if (sortedRow.Count > 11)
                     {
                         var answer5 =
                             question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[11].ToString()));
-                        if (string.IsNullOrEmpty(answer5?.RussianText))
-                        {
-                            SqlHelper.UpdateAnswerTranslate(answer5.Id, sortedRow[12].ToString());
-                        }
+                        SqlHelper.UpdateAnswerTranslate(answer5.Id, sortedRow.Count > 12 ? sortedRow[12].ToString() : "");
                     }
                 }
             }
