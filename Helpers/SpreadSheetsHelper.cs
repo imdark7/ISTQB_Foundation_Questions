@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
@@ -9,7 +10,8 @@ namespace ISTQB_Foundation_Questions.Helpers
 {
     public static class SpreadSheetsHelper
     {
-        public static void UpdateTranslateData()
+
+        private static SpreadsheetsResource.ValuesResource.GetRequest GetData()
         {
             string[] scopes = { SheetsService.Scope.Spreadsheets };
             var aplicationName = "istqb data translate";
@@ -21,10 +23,15 @@ namespace ISTQB_Foundation_Questions.Helpers
                 ApplicationName = aplicationName
             });
             var spreadsheetId = "1AaMpnux39BVqEAdjqGJ2bfRQowTmBvEvtR3LmgGUvoA";
-
-            var response = service.Spreadsheets.Values.Get(spreadsheetId, "A2:M1060").Execute().Values;
+            return service.Spreadsheets.Values.Get(spreadsheetId, "A2:M1060");
+        }
+        public static void UpdateTranslateData()
+        {
+            var response = GetData().ExecuteAsync();
+            var questionsTask = Task.Factory.StartNew(() => SqlHelper.ReadQuestions());
             var sortedList = new List<IList<object>>();
-            foreach (var row in response)
+
+            foreach (var row in response.GetAwaiter().GetResult().Values)
             {
                 var sortedListRow = sortedList.Find(list => list[1].ToString() == row[1].ToString());
                 if (sortedListRow == null)
@@ -41,11 +48,9 @@ namespace ISTQB_Foundation_Questions.Helpers
                     }
                 }
             }
-
-            var questions = SqlHelper.ReadQuestions();
             foreach (var sortedRow in sortedList)
             {
-                var question = questions.Find(q => q.Id.ToString().Equals(sortedRow[1].ToString()));
+                var question = questionsTask.GetAwaiter().GetResult().Find(q => q.Id.ToString().Equals(sortedRow[1].ToString()));
                 if (question != null)
                 {
                     if (!string.IsNullOrEmpty(sortedRow[2].ToString()))

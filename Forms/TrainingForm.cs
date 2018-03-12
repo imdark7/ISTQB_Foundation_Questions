@@ -186,7 +186,7 @@ namespace ISTQB_Foundation_Questions.Forms
             new TranslateForm(question, this).Show();
         }
 
-        public void RefreshData( )
+        public void RefreshData()
         {
             question = SqlHelper.ReadQuestions($"[Id] = '{question.Id}'").First();
 
@@ -286,6 +286,7 @@ namespace ISTQB_Foundation_Questions.Forms
         {
             Enabled = false;
             SpreadSheetsHelper.UpdateTranslateData();
+            RefreshData();
             Enabled = true;
         }
 
