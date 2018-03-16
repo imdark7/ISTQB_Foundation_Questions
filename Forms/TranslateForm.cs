@@ -163,7 +163,12 @@ namespace ISTQB_Foundation_Questions.Forms
                     $"entry.51961822={AnswerNumber5}" + "&" +
                     $"entry.1313525750={AnswerTranslate5}";
             }
-            client.GetAsync(requestString).GetAwaiter().GetResult();
+            var result = client.GetAsync(requestString).GetAwaiter().GetResult();
+            if (!result.IsSuccessStatusCode)
+            {
+                MessageBox.Show(ActiveForm,
+                    @"Не удалось записать перевод вопроса в файл синхронизации (Возможно, вопрос слишком длинный). Изменения останутся только локально");
+            }
         }
 
         private bool IsTranslateChanged()

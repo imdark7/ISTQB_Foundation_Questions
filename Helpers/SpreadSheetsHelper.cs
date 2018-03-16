@@ -55,30 +55,30 @@ namespace ISTQB_Foundation_Questions.Helpers
                 {
                     if (!string.IsNullOrEmpty(sortedRow[2].ToString()))
                     {
-                        SqlHelper.UpdateQuestionTranslate(question.Id, sortedRow[2].ToString());
+                        SqlHelper.UpdateQuestionTranslate(question.Id, sortedRow[2].ToString().Replace("\n", "\r\n"));
                     }
 
                     var answer1 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[3].ToString()));
-                    SqlHelper.UpdateAnswerTranslate(answer1.Id, sortedRow[4].ToString());
+                    SqlHelper.UpdateAnswerTranslate(answer1.Id, sortedRow[4].ToString().Replace("\n", "\r\n"));
 
                     var answer2 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[5].ToString()));
-                    SqlHelper.UpdateAnswerTranslate(answer2.Id, sortedRow[6].ToString());
+                    SqlHelper.UpdateAnswerTranslate(answer2.Id, sortedRow[6].ToString().Replace("\n", "\r\n"));
 
                     var answer3 = question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[7].ToString()));
-                    SqlHelper.UpdateAnswerTranslate(answer3.Id, sortedRow.Count > 8 ? sortedRow[8].ToString() : "");
+                    SqlHelper.UpdateAnswerTranslate(answer3.Id, sortedRow.Count > 8 ? sortedRow[8].ToString().Replace("\n", "\r\n") : "");
 
                     if (sortedRow.Count > 9)
                     {
                         var answer4 =
                             question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[9].ToString()));
-                        SqlHelper.UpdateAnswerTranslate(answer4.Id, sortedRow.Count > 10 ? sortedRow[10].ToString() : "");
+                        SqlHelper.UpdateAnswerTranslate(answer4.Id, sortedRow.Count > 10 ? sortedRow[10].ToString().Replace("\n", "\r\n") : "");
                     }
 
                     if (sortedRow.Count > 11)
                     {
                         var answer5 =
                             question.Answers.Find(answer => answer.Id.ToString().Equals(sortedRow[11].ToString()));
-                        SqlHelper.UpdateAnswerTranslate(answer5.Id, sortedRow.Count > 12 ? sortedRow[12].ToString() : "");
+                        SqlHelper.UpdateAnswerTranslate(answer5.Id, sortedRow.Count > 12 ? sortedRow[12].ToString().Replace("\n", "\r\n") : "");
                     }
                 }
             }

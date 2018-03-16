@@ -841,7 +841,7 @@ d. Requires the all CI�s and their versions in the system are known',NULL,NULL
  (333,'Faults found by users are due to:',NULL,NULL,NULL),
  (334,'An incident logging system',NULL,NULL,NULL),
  (335,'The later in the development life cycle a fault is discovered, the more expensive it is to fix. Why?',NULL,NULL,NULL),
- (336,'Which set of test data demonstrates equivalence partitioning to check whether a customer is a teenager or not?',NULL,NULL,NULL),
+ (336,'Which set of test data demonstrates equivalence partitioning to check whether a customer is a teenager (13-19 years) or not?',NULL,NULL,NULL),
  (337,'Which technique if OFTEN considered as an extension of equivalence partitioning?',NULL,NULL,NULL),
  (338,'Software testing activities should start',NULL,NULL,NULL),
  (339,'A company by the name Software Testing Genius Inc. decides to use functional test execution automation tool for testing GUI of their product. The GUI is expected to change frequently. Software Testing Genius Inc. has put some of the manual testers through a 3-day training program on how to use the tool. Which of the following is likely to be true?',NULL,NULL,NULL),
@@ -1689,11 +1689,11 @@ Y. Dynamic analysis tools
 Z. Performance testing tools
 Which of the following of these tools is most likely to be used by developers?',NULL,NULL,NULL),
  (725,'What is a test condition?',NULL,NULL,NULL),
- (726,'Which of the following general testing principles are t rue?
-Testing shows the presence of defects but not the absence of defects
-Testing of combinations of inputs and outputs will find all defects
-Testing should start after the completion of key development tasks
-Testing of safety-critical software is similar to testing web applications',NULL,NULL,NULL),
+ (726,'Which of the following general testing principles are true?
+I. Testing shows the presence of defects but not the absence of defects
+II. Testing of combinations of inputs and outputs will find all defects
+III. Testing should start after the completion of key development tasks
+IV. Testing of safety-critical software is similar to testing web applications',NULL,NULL,NULL),
  (727,'If the temperature falls below 18 degrees, the heating is switched on. When the temperature reaches 21 degrees, the heating is switched off. What is the minimum set of test input values to cover all valid equivalence partitions?',NULL,NULL,NULL),
  (728,'By creating future tests based on the results of previous tests, a tester is demonstrating what type of informal test design technique?',NULL,NULL,NULL),
  (729,'What is the purpose of confirmation testing?',NULL,NULL,NULL),
@@ -1726,8 +1726,8 @@ V. Confirm that changes to a test item fixed
 a defect
 Which of the following statements is true?',NULL,NULL,NULL),
  (742,'A test plan included the following clauses among the exit criteria:
-# System test shall continue until all significant product risks have been covered to the extent specified in the product risk analysis document.
-# System test shall continue until no must-fix defects remain against any significant product risks specified in the product risk analysis document.
+a. System test shall continue until all significant product risks have been covered to the extent specified in the product risk analysis document.
+b. System test shall continue until no must-fix defects remain against any significant product risks specified in the product risk analysis document.
 During test execution, the test team detects 430 must-fix defects prior to release and all must-fix defects are resolved. After release, the customers find 212 new defects, none of which were detected during testing. This means that only 67% of the important defects were found prior to release, a percentage which is well below average in your industry. You are asked to find the root cause for the high number of field failures. Consider the following list of explanations:
 I. Not all the tests planned for the significant product risks were executed.
 II. The organization has unrealistic expectations of the percentage of defects that testing can find.
@@ -1754,8 +1754,7 @@ IV. Rigorous testing is used to prove that all failures have been found.',NULL,N
  (749,'What would trigger the execution of maintenance testing?',NULL,NULL,NULL),
  (750,'Popular specification-based techniques are:',NULL,NULL,NULL),
  (751,'As a test leader you are collecting measures about defects. You recognize that after the first test cycle � covering all requirements - subsystem C has a defect density that is 150% higher than the average. Subsystem A on the other hand has a defect density that is 60% lower than the average.
-
-COLOR: navy">What conclusions for the next test cycle could you draw from this fact?',NULL,NULL,NULL),
+What conclusions for the next test cycle could you draw from this fact?',NULL,NULL,NULL),
  (752,'Which of the following is a TRUE statement about the use of static analysis tools?',NULL,NULL,NULL),
  (753,'Which of the following best describes typical test exit criteria?',NULL,NULL,NULL),
  (754,'How does testing contribute to software quality?',NULL,NULL,NULL),
@@ -1765,11 +1764,8 @@ How many equivalence partitions are needed to test the calculation of the bonus?
  (756,'Which of the statements about reviews are correct?
  
 I. Reviews are useful because, through their use, defects can be found early, resulting in cost savings.
-
 II. Reviews are useful because they help management understand the comparative skills of different developers.
-
 III. Testers should not get involved in specification reviews because it can bias them unfavorably.
-
 IV. Many early defects are found in reviews, lengthening the time needed for the development life cycle',NULL,NULL,NULL),
  (757,'What is integration testing?',NULL,NULL,NULL),
  (758,'Below you find a list of descriptions of problems that can be observed during testing or operation. Which is most likely a failure?',NULL,NULL,NULL),
@@ -1788,11 +1784,8 @@ IV. A bottom-up approach, in which each tester estimates their work and all esti
  (765,'Which of the following statements about test design are TRUE?
  
 I. During test design, the test cases and test data are created and specified.
-
 II. If expected results are not defined, a plausible but erroneous result may be accepted as correct.
-
 III. The IEEE 829 standard describes the content of test design and test case specifications.
-
 IV. Test design is a formal process in which the conditions to be tested are determined.',NULL,NULL,NULL),
  (766,'What factors should an organization take into account when determining how much testing is needed?
  
@@ -1818,7 +1811,7 @@ End Procedure X',NULL,NULL,NULL),
  (770,'Which of the following statements about static analysis is FALSE?',NULL,NULL,NULL),
  (771,'Given the following sample of pseudo code:
 
-Roman''">01 Input number of male rabbits
+01 Input number of male rabbits
 02 Input number of female rabbits
 03 If male rabbits > 0 and female rabbits > 0 then
 04   Input Do you want to breed (Yes / No)
@@ -3331,8 +3324,8 @@ INSERT INTO `Answers` (Id,QuestionId,EnglishText,RussianText,IsCorrect) VALUES
  (641,161,'Fault tolerance',NULL,0),
  (642,162,'Programming standard violations',NULL,0),
  (643,162,'Referring a variable with an undefined value',NULL,0),
- (644,162,'Security vulnerabilities',NULL,1),
- (645,162,'All Above',NULL,0),
+ (644,162,'Security vulnerabilities',NULL,0),
+ (645,162,'All Above',NULL,1),
  (646,163,'End Usability License Agreement',NULL,0),
  (647,163,'End User License Agreement',NULL,1),
  (648,163,'End User License Arrangement',NULL,0),
